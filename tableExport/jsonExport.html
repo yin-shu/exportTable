@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="jquery.min.js" ></script>
+		<script type="text/javascript" src="jsonExport.js" ></script>
+		<script type="text/javascript" src="jquery.base64.js" ></script>
+		<title></title>
+	</head>
+	<body>
+		<button onclick="downLoad()">下载</button>
+	</body>
+	<script type="text/javascript">
+		var arr=[]
+		for(var i=0;i<100;i++){
+			var obj={"列一":"水电费水电费","列二":"水电费水电费","列三":"水电费水电费","列四":"水电费水电费","列五":"dsfdfs","列六":"123234"};
+			arr.push(obj);
+		}
+		function downLoad(){
+			tableExport({type:'excel',arrData:arr,displayTableName:true, separator:';',fileName:'我的Excel',tableName:'我的table', escape:'false'})
+		}
+	
+	</script>
+</html>
