@@ -54,7 +54,8 @@ function tableExport(options) {
 			trData = "";
 			getContent(item, rowIndex, function(cell, row, col) {
 				if(cell != null) {
-					trData += "<td style='";
+					//mso-number-format:\"\@\",作用：让数据中的'0123'字符串默认显示，不会转变成123，不会出现科学计数法
+			    		trData += "<td style='height:30px;font-family:\"SimSun\";mso-number-format:\"\@\";";
 					for(var styles in defaults.excelstyles) {
 						if(defaults.excelstyles.hasOwnProperty(styles)) {
 							//trData += defaults.excelstyles[styles] + ": 1px solid black;";
